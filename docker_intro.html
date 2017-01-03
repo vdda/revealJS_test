@@ -1,0 +1,404 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			
+				<section> <h1>Docker</h1>
+					<h3>Docker for Cluster Computing in Python</h3>
+					<p>
+						<small>Created by Victoria Dominguez del Angel / <a href="http://twitter.com/vic_bioinfo">@vic_bioinfo</a></small> </section>
+								
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Outline
+				    
+				    - What is Docker?
+				    - Building an image
+				    - BioShadock & Orchestration
+				    
+				  </script>
+				</section>
+
+				<section data-background="images/container_terminal.jpeg">
+						<h2>What is Docker?</h2>
+						
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Docker is:
+				    
+				    - Not a virtual machine system
+				    - Linux container + Layered file-system + Abstract network
+				    - It can run in a VM (or not)
+				    
+				  </script>
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## VM vs Container
+				    
+				    ![VM-based hosting vs Container-based hosting](images/container-vs-vm.png)
+				    
+				    
+				  </script>
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Why is docker nicer than VMs
+				    
+				    - Less overhead: isolation vs virtualization
+				    - Layered FS: incremental diffs + common base images
+				    - Nice command line based UX
+				    - Simple reproducible builds and deployment
+				    
+				  </script>
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Docker architecture
+				    
+				    ![Architecture of Docker](images/docker-architecture.png)
+				   
+				    
+				  </script>
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Getting started with Docker
+				    
+				    - Host applications / services efficiently
+				    - Fast developer environment setup
+				    - Flexible build / Continuous Integration
+				    - Quickly provision a compute cluster
+				    - Reproducible science
+				    
+				  </script>
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Getting started with Docker
+
+				    https://docs.docker.com/engine/installation/
+				    - Windows: daemon in Linux with Hyper-V or Virtualbox
+				    - OSX: daemon in Linux with xhyve or Virtualbox
+				    - Linux: daemon on host without VM
+				    - Cross-platform docker client binary
+
+				   
+				  </script>
+				</section>
+				
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Running in a container
+				    
+				    ```
+				    $ docker run python:3.5 python -c "print(40 + 2)"
+				    ```
+				    ```
+				    $ docker run `--rm` python:3.5 python -c "print(40 + 2)"
+				    ```
+				    <!-- .element: class="fragment" data-fragment-index="2" -->
+
+				    
+				  </script>
+				</section>
+				
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Running in a container
+				    
+				    ```
+				    $ docker run --rm python:3.5 python -c "print(40 + 2)"
+				    				    
+				    ```
+				    
+				    ```
+				    Unable to find image 'python:3.5' locally
+				    latest: Pulling from library/python
+				    
+				    357ea8c3d80b: Already exists
+				    52befadefd24: Pull complete
+				    3c0732d5313c: Pull complete
+				    ceb711c7e301: Downloading [=========>    ] 90.27 MB/129.7 MB
+				    4211bb537697: Download complete
+				    71f9074c0739: Download complete
+				    3e5349707036: Download complete
+				    ```
+				     <!-- .element: class="fragment" data-fragment-index="2" -->
+
+				  </script>
+				</section>
+				
+
+								
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Running in a container
+				    
+				    ```
+				    $ docker run `--rm` python:3.5 python -c "print(40 + 2)"
+				   
+				    Unable to find image 'python:3.5' locally
+				    latest: Pulling from library/python
+				   				   
+				    357ea8c3d80b: Already exists
+				    52befadefd24: Pull complete
+				    3c0732d5313c: Pull complete
+				    ceb711c7e301: Pull complete
+				    4211bb537697: Pull complete
+				    71f9074c0739: Pull complete
+				    3e5349707036: Pull complete
+				    Digest: sha256:a755ad5a30b2[...]
+				    Status: Downloaded newer image for python:3.5
+				    42
+				    ```
+				    ```
+				    $ docker run --rm python:3.5 python -c "print(40 + 3)"
+				    43
+				    ```
+				     <!-- .element: class="fragment" data-fragment-index="2" -->
+				    
+				  </script>
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Interactive sessions
+
+				    ```
+				    $ docker run --rm -ti python:3.5 bash
+				    root@10d2dfedb935:/# ps
+				    PID TTY   TIME  CMD
+				    1 ?  00:00:00 bash
+				    8 ?  00:00:00 ps
+				    ```
+				    
+				    ```
+				    root@10d2dfedb935:/# python
+				    Python 3.5.2 (default, Aug  9 2016, 20:58:38)
+				    [GCC 4.9.2] on linux
+				    >>> 40 + 2
+				    42
+				    >>> ^D
+				    root@10d2dfedb935:/# exit
+				    ```
+				    <!-- .element: class="fragment" data-fragment-index="2" -->
+				    
+				  </script>
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## A real-life example
+				    
+				    ```
+				    $ cd bokeh/bokeyjs
+				    $ npm install -g gulp
+				    $ gulp build
+				    [Bunch or errors caused by a broken nodejs install]
+				    ```
+				   				    
+				  </script>
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## A real-life example
+				    
+
+				    ```
+				    $ cd bokeh
+				    $ docker run --rm --volume $PWD:/io node \
+				    bash -c "cd /io/bokehjs &amp;&amp; npm install -g gulp &amp;&amp; gulp build"
+				    ```
+				    ```
+				    npm info it worked if it ends with ok
+				    npm info using npm@3.10.3
+				    npm info using node@v6.4.0
+				    npm info attempt registry request try #1 at 12:45:51 PM
+				    npm http request GET https://registry.npmjs.org/gulp
+				    [...] # Download the Internet
+				    [13:03:42] Finished 'build' after 10 s
+				    ```
+				    <!-- .element: class="fragment" data-fragment-index="2" -->
+				    ```
+				    ls bokehjs/node_modules | wc -l
+				    604
+				    ```
+				     <!-- .element: class="fragment" data-fragment-index="3" -->
+				    
+				  </script>
+				</section>
+				
+
+				<section data-background="images/building_images.jpeg">
+				  <h2>Building an image</h2>
+				  
+				</section>
+
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Getting started
+
+				    $ git clone https://github.com/vdda/docker-distributed
+
+				    ```
+				    $ ls docker-distributed
+				    docker-compose.yml
+				    Dockerfile  
+				    examples
+				    kubernetes
+				    README.md
+				    requirements.txt
+				    ```
+				    
+				  </script>
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Docker file
+				   ![Docker file](images/code_dockerFile.png)
+
+				  </script> 
+				</section>
+				
+				<section data-markdown>
+				  <script type="text/template">
+				## Docker build
+
+				```
+				$ docker build -t vdda/distributed .
+				Sending build context to Docker daemon 178.2 kB
+				Step 1 : FROM debian:jessie
+				---> 1b01529cc499
+				Step 2 : MAINTAINER Victoria Dominguez  <vdbohler@gmail.com>
+				---> Using cache
+				---> 37887ee139f1
+				Step 3 : RUN apt-get update -yqq  &amp;&amp; apt-get install -yqq wget [...]
+				---> Using cache
+				---> 3c2b8caccb80
+				 [...]
+
+				 ```
+
+				  </script> 
+				</section>
+
+				     
+				
+				<section data-markdown>
+				  <script type="text/template">
+				    ### Docker build &amp; docker push
+				    
+				    ```
+				    $ docker build -t vdda/distributed .
+				    Sending build context to Docker daemon 178.2 kB
+				    Step 1 : FROM debian:jessie
+				    ---> 1b01529cc499
+				    Step 2 : MAINTAINER Victoria Dominguez  <vdbohler@gmail.com> 
+				     ---> Using cache
+				     ---> 37887ee139f1
+				     Step 3 : RUN apt-get update -yqq  &amp;&amp; apt-get install -yqq wget
+				     ---> Using cache
+				     ---> 3c2b8caccb80
+				 
+				     $ docker run --rm vdda/distributed \
+				     python -c "import sklearn; print(sklearn.__version__)"
+				     0.17.1
+				     $ docker push vdda/distributed
+				     ```
+							    
+				  </script> 
+				</section>
+				     
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Docker on the Cloud
+				    
+				    ![Architecture of Docker](images/docker_ifb.png)
+				   
+				    
+				  </script>
+				</section>
+
+				
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Docker on the Cloud
+				    
+				    ![Architecture of Docker](images/docker_ifb2.png)
+				   
+				    
+				  </script>
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## BioShaDock
+				    
+				    ![Architecture of Docker](images/bioshadock.png)
+				  				    
+				  </script>
+				</section>
+
+
+				<section data-background="images/orchestration.jpg">
+				  <h2>Orchestration</h2>
+				  
+				</section>
+
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
