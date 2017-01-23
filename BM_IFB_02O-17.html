@@ -326,8 +326,51 @@
 				  </script>
 				</section>
 
+				<section data-markdown>
+				  <script type="text/template">
+				    ### Prix final avec ajustement
 				    
+				    | HT  | TTC
+				    ------------ | ------------- | -------------
+				    50% Stockage utilisé(To €/an)|	431.519	| 489.669
+				    20% hrs de calculs utilisées (vCPU €/an) |	0.041050133 | 0.046581906
+
+				  </script>
+				</section>	    
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ### Prix final par vCPU
+				    - Hyperthreading (vCPU), il y a environ 5 Go de RAM en moyenne par vCPU (128 Go avec 12 c/24 T).
+				    - 1vCPU et 4 Go de mémoire est notre VM standard à 0.05 €/heure (36 €/mois).
+				    - On définit :
+				    - vCPU- = 1vCPU, 2 Go RAM (0.03 €/h)
+				    - vCPU = 1 vCPU 4 Go RAM (0.05 €/h)
+				    - vCPU+ = 1vCPU, 16 Go RAM (0.08 €/h) 
 				    
+				  </script>
+				</section>	    
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ### Prix de VM's dans le cloud IFB
+				 ![VM's prices](images/type2_VM_price.png)
+
+				  </script> 
+				</section>
+
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ### Prix final par vCPU
+				    - 128 coeurs pour 6000 Go de RAM (on ne tient pas compte de l’hyperthreading). 1vCPU standard a donc ~48 Go de RAM.
+				    - 128 x 8700 = 1.1 Millions d’heures de calcul en 1 an
+				    - 1vCPU-BIGMEM revient donc à 16 /1.1 = 0.014 €/heure. (Note : 16 k€ = 80 k€ machines BIGMEM divisé par 5 ans)
+				    
+				  </script>
+				</section>	    
+				
+				
 				<section>
                                   <p> Questions ? </p>  
                                   
