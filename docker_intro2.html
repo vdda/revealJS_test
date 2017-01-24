@@ -130,7 +130,7 @@
 
 				<section data-markdown>
 				  <script type="text/template">
-				    ## SSH Key
+				    ## IFB Cloud : Use SSH Key
 				    ```
 				    $ ls -la ~/.ssh
 				    ```
@@ -180,22 +180,6 @@
 				    $ docker images
 				    $ docker ps
 				    ```
-
-				    
-				  </script>
-				</section>
-
-				<section data-markdown>
-				  <script type="text/template">
-				    ## Running in a container
-				    
-				    ```
-				    $ docker run python:3.5 python -c "print(40 + 2)"
-				    ```
-				    ```
-				    $ docker run --rm python:3.5 python -c "print(40 + 2)"
-				    ```
-				    <!-- .element: class="fragment" data-fragment-index="2" -->
 
 				    
 				  </script>
@@ -287,17 +271,49 @@
 
 				<section data-markdown>
 				  <script type="text/template">
-				    ### A real-life example or Bend it like Bjorn
-				    
+				    ### Inspect Containers
 				    ```
-				    $docker run -d -p 80:80 -p 8021:21 bgruening/galaxy-stable:16.10
-				  
+				    $ docker ps   #shows running containers
+				    $ docker inspect   #info on a container (incl. IP address)
+				    $ docker logs   #gets logs from container
+				    $ docker events   #gets events from container
+				    $ docker port   #shows public facing port of container
+				    $ docker top   #shows running processes in container
+				    $ docker diff   #shows changed files in container's FS
+				    $ docker stats   #shows metrics, memory, cpu, filsystem
 				    ```
 				  </script>
 				</section>
 
 				
+				<section data-markdown>
+				  <script type="text/template">
+				    ### More Containers
 
+				    ```
+				    $ docker run -it --rm ubuntu # Run a container interactively 
+
+				    $ docker run -d hadoop  # Run a container in the background 
+				    
+				    $ docker run -p 80 nginx  #Publish container port 80 on a random port
+				    ```
+				    				    
+				  </script>
+				</section>
+
+				
+				<section data-markdown>
+				  <script type="text/template">
+				    ### A real-life example or Bend it like Björn
+				    
+				    ```
+				    $docker run -d -p 80:80 -p 8021:21 bgruening/galaxy-stable
+				    
+				    ```
+				  </script>
+				</section>
+
+				
 				<section data-background="images/building_images.jpeg">
 				  <h2>Building an image</h2>
 				  
