@@ -1,0 +1,11 @@
+Training: Using clouds and VMs in bioinformatics.
+Cloud IFB
+ELIXIR EXCELERATE workshop 23.-25.5.2016, CSC, Espoo, Finland
+Eija Korpelainen
+
+
+Course in genome assembly and annotation
+IOCB AS CR, Prague, Czech Republic
+Henrik Lantz
+30 participants
+
