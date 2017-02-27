@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			
+				<section> 
+					<h3>The French Institute of Bioinformatics: Elixir-Fr </h3>
+					<p>
+						<small>Created by Victoria Dominguez del Angel / <a href="http://twitter.com/vic_bioinfo">@vic_bioinfo</a></small> </section>
+								
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Outline
+				    
+				    - Challenges in Biology
+				    - IFB overview
+				    - IFB answers : Cloud Computing and Reproducible Tools				   
+				 
+				  </script>
+				</section>
+
+				
+                                <section data-background="images/indus_rev.png">
+                                  <style> h2 {color:;} </style>
+                                  <h2 style="color:#000000">Big Data is becoming the new "black gold" </h2>             
+                                </section>
+
+
+				<section data-transition="slide" data-background="images/data_explosion.png" data-background-transition="zoom">
+                                </section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Data Management
+				    - Computing Infrastructure
+				    - Heterogenous Data 
+				    - Robust bioinformatic analysis (Databases, programming, algorithms)
+				    - Security
+				    - Reproducible Analysis & Auditable Results
+				   
+				  </script>
+				</section>
+				
+				    <section data-transition="slide" data-background="images/ifb_image.png" data-background-transition="zoom">
+				      <h3 style="color:#000000">IFB : Federation of Bioinformatic Platforms</h3>
+				    </section>
+
+				    <section data-transition="slide" data-background="images/36platform.png" data-background-transition="zoom">
+				     
+				    </section>
+
+				    <section data-background="images/6_poles_regionaux.png">
+				     
+				    </section>
+
+				    
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Services overview
+				    - Data: provision of curated data collections
+				    - Tools: diffusion of innovative tools for analyzing biological data
+				    - Training: of the life science users
+				  
+				    
+				  </script>
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ### Training 2016 
+				    - 1705 Students (Universities)
+				    - 1497 Professional training courses
+				    - Clouds and VMs in bioinformatics, Genome assembly & annotation and Metagenomics  <!-- .element: class="fragment" data-fragment-index="2" -->
+				    
+				  </script>
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## IFB e-infrastructure
+				    - National infrastructure is hosted at IDRIS-CNRS
+				    - 5000 cores and 1 PB storage
+				    - At the end 2017 the IFB’s infrastructure will be provided : 10,000 cores and 2PB storage
+				   
+				  </script>
+				</section>
+
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ### European Open Science Cloud : FAIR
+				![Docker file](images/Fair.png)
+				    				   				    
+				  </script>
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ### European Open Science Cloud : DMP
+				 ![DMP file](images/DMP.png)
+
+				  </script> 
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## Cyclone Project H202O
+				    - UC2 Cloud virtual pipeline for microbial genomes analysis
+				    - VPN (Virtual Private Network)
+				 ![DMP file](images/vpn2.png)
+
+				  </script> 
+				</section>
+				   
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## VPN
+				![Docker file](images/vpn3.png)
+				    				   				    
+				  </script>
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## VPN
+				 ![DMP file](images/vpn4.png)
+
+				  </script> 
+				</section>
+
+				<section data-markdown>
+				  <script type="text/template">
+				    ## DEMO
+
+				     https://goo.gl/kLBNV7
+				
+				  </script> 
+				</section>
+
+			
+
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+                                  <h2>Thank you for your attention</h2>
+
+				</section>
+				<section>
+                                  <p> Questions ? </p>  
+                                        
+				</section>
+
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
