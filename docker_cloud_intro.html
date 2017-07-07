@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			  
+			  <section> <h1>Docker</h1>
+			  <h3>Cloud and Docker for Beginners</h3>
+			  <small>Created by Victoria Dominguez del Angel / <a href="http://twitter.com/vic_bioinfo">@vic_bioinfo</a></small> </section>
+			  
+
+			  <section data-background="images/container_terminal.jpeg">
+			  <h2>What is Docker?</h2>
+			  </section>
+			  
+			  <section data-markdown>
+			  <script type="text/template">
+			  ## Docker is:
+			  
+			  - Not a virtual machine system
+			  - Linux container + Layered file-system + Abstract network
+			  - It can run in a VM (or not)
+			  
+			  </script>
+			  </section>
+
+			  <section data-markdown>
+			  <script type="text/template">
+			  ## VM vs Container
+			  
+			  ![VM-based hosting vs Container-based hosting](images/container-vs-vm.png)
+			  
+			  </script>
+			  </section>
+			  
+			  <section data-markdown>
+			  <script type="text/template">
+			  ## Why is docker nicer than VMs
+			  
+			  - Less overheads : isolation vs virtualization
+			  - Layered FS: incremental diffs + common base images
+			  - Nice command line based UX
+			  - Simple reproducible builds and deployment
+			  
+			  </script>
+			  </section>
+
+				
+			  <section data-markdown>
+			  <script type="text/template">
+			  ## Images and Layers
+			  
+			  - ubuntu : 200 Mb
+			  - ubuntu + R : 250 Mb
+			  - ubuntu + matlab : 250 Mb
+			  
+			  All three: 300 Mb
+			  
+			  </script>
+			  </section>
+			  
+			  <section data-markdown>
+			  <script type="text/template">
+			  ## Getting started with Docker
+			  
+			  - Host applications / services efficiently
+			  - Fast developer environment setup
+			  - Flexible build / Continuous Integration
+			  - Quickly provision a compute cluster
+			  - Reproducible science
+			  
+			  </script>
+			  </section>
+
+			  <section data-markdown>
+			  <script type="text/template">
+			  ## Hands On
+			  
+			  ![HandsOn](images/hands_on.png)
+			  
+			  </script>
+			  </section>
+			  
+			  <section data-markdown>
+			  <script type="text/template">
+## IFB Cloud : Use SSH Key
+
+```
+$ ls -la ~/.ssh
+```
+```
+$ ssh-keygen -t dsa
+
+```
+```
+$ ssh-add ~/.ssh
+ssh-add -l
+```
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Hands On
+
+![HandsOn1](images/diap1.png)
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Hands On
+
+![HandsOn2](images/diapo2.png)
+			  
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Hands On
+			  
+![HandsOn3](images/diapo3.png)
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Hands On
+
+![HandsOn4](images/diapo4.png)
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+## Running in a container
+
+```
+$ docker run --rm python:3.5 python -c "print(40 + 2)"
+
+
+
+```
+Unable to find image 'python:3.5' locally
+latest: Pulling from library/python
+
+357ea8c3d80b: Already exists
+52befadefd24: Pull complete
+3c0732d5313c: Pull complete
+ceb711c7e301: Downloading [=========>    ] 90.27 MB/129.7 MB
+4211bb537697: Download complete
+71f9074c0739: Download complete
+3e5349707036: Download complete
+```
+<!-- .element: class="fragment" data-fragment-index="2" -->
+
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+### Inspect Containers
+```
+$ docker ps   #shows running containers
+$ docker inspect   #info on a container (incl. IP address)
+$ docker logs   #gets logs from container
+$ docker events   #gets events from container
+$ docker port   #shows public facing port of container
+$ docker top   #shows running processes in container
+$ docker diff   #shows changed files in container's FS
+$ docker stats   #shows metrics, memory, cpu, filsystem
+```
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+### More Containers
+
+```
+$ docker run -it --rm ubuntu # Run a container interactively 
+
+$ docker run -d hadoop  # Run a container in the background 
+
+$ docker run -p 80 nginx  #Publish container port 80 on a random port
+```
+				    				    
+</script>
+</section>
+
+<section data-markdown>
+<script type="text/template">
+### Docker build &amp; docker push
+
+```
+$ docker build -t vdda/distributed .
+Sending build context to Docker daemon 178.2 kB
+Step 1 : FROM ubuntu:16.04
+---> 1b01529cc499
+Step 2 : MAINTAINER Victoria Dominguez  <vdbohler@gmail.com> 
+---> Using cache
+---> 37887ee139f1
+Step 3 : RUN apt-get install curl -y && apt-get install vim -y
+---> Using cache
+---> 3c2b8caccb80
+
+$ docker run --rm vdda/distributed ls
+$ docker push vdda/distributed
+```
+
+</script> 
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## Docker on the IFB Cloud 
+![Architecture of Docker](images/docker_ifb.png)
+
+</script>
+</section>
+
+
+<section data-markdown>
+<script type="text/template">
+## Docker on the IFB Cloud
+
+![Architecture of Docker](images/docker_ifb2.png)
+
+
+</script>
+</section>
+
+
+</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+// More info https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+history: true,
+
+// More info https://github.com/hakimel/reveal.js#dependencies
+dependencies: [
+{ src: 'plugin/markdown/marked.js' },
+{ src: 'plugin/markdown/markdown.js' },
+{ src: 'plugin/notes/notes.js', async: true },
+{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+]
+});
+</script>
+</body>
+</html>
