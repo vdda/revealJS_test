@@ -157,31 +157,6 @@ ssh-add -l
 </script>
 </section>
 
-<section data-markdown>
-<script type="text/template">
-## Running in a container
-
-```
-$ docker run --rm python:3.5 python -c "print(40 + 2)"
-
-
-
-```
-Unable to find image 'python:3.5' locally
-latest: Pulling from library/python
-
-357ea8c3d80b: Already exists
-52befadefd24: Pull complete
-3c0732d5313c: Pull complete
-ceb711c7e301: Downloading [=========>    ] 90.27 MB/129.7 MB
-4211bb537697: Download complete
-71f9074c0739: Download complete
-3e5349707036: Download complete
-```
-<!-- .element: class="fragment" data-fragment-index="2" -->
-
-</script>
-</section>
 
 <section data-markdown>
 <script type="text/template">
@@ -199,21 +174,6 @@ $ docker stats   #shows metrics, memory, cpu, filsystem
 </script>
 </section>
 
-
-<section data-markdown>
-<script type="text/template">
-### More Containers
-
-```
-$ docker run -it --rm ubuntu # Run a container interactively 
-
-$ docker run -d hadoop  # Run a container in the background 
-
-$ docker run -p 80 nginx  #Publish container port 80 on a random port
-```
-				    				    
-</script>
-</section>
 
 <section data-markdown>
 <script type="text/template">
