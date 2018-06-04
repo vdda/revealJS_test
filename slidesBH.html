@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Elixir Biohackathon</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">   
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		
+          <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+        
+    <!-- For syntax highlighting -->
+          <link rel="stylesheet" href="lib/css/zenburn.css">
+    
+    <!-- For Customized Design-->
+    <link rel="stylesheet" href="css/custom.css">
+    
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+    
+    <script type="text/javascript">/*<![CDATA[*/
+  /* 
+  March 19, 2004 MathHTML (c) Peter Jipsen http://www.chapman.edu/~jipsen
+  Released under the GNU General Public License version 2 or later.
+  See the GNU General Public License (at http://www.gnu.org/copyleft/gpl.html)
+  for more details.
+  */
+  
+  function convertMath(node) {// for Gecko
+    if (node.nodeType==1) {
+      var newnode = 
+        document.createElementNS("http://www.w3.org/1998/Math/MathML",
+          node.nodeName.toLowerCase());
+      for(var i=0; i < node.attributes.length; i++)
+        newnode.setAttribute(node.attributes[i].nodeName,
+          node.attributes[i].nodeValue);
+      for (var i=0; i<node.childNodes.length; i++) {
+        var st = node.childNodes[i].nodeValue;
+        if (st==null || st.slice(0,1)!=" " && st.slice(0,1)!="\n") 
+          newnode.appendChild(convertMath(node.childNodes[i]));
+      }
+      return newnode;
+    }
+    else return node;
+  }
+  
+  function convert() {
+    var mmlnode = document.getElementsByTagName("math");
+    var st,str,node,newnode;
+    for (var i=0; i<mmlnode.length; i++)
+      if (document.createElementNS!=null)
+        mmlnode[i].parentNode.replaceChild(convertMath(mmlnode[i]),mmlnode[i]);
+      else { // convert for IE
+        str = "";
+        node = mmlnode[i];
+        while (node.nodeName!="/MATH") {
+          st = node.nodeName.toLowerCase();
+          if (st=="#text") str += node.nodeValue;
+          else {
+            str += (st.slice(0,1)=="/" ? "</m:"+st.slice(1) : "<m:"+st);
+            if (st.slice(0,1)!="/") 
+               for(var j=0; j < node.attributes.length; j++)
+                 if (node.attributes[j].nodeValue!="italic" &&
+                   node.attributes[j].nodeValue!="" &&
+                   node.attributes[j].nodeValue!="inherit" &&
+                   node.attributes[j].nodeValue!=undefined)
+                   str += " "+node.attributes[j].nodeName+"="+
+                       "\""+node.attributes[j].nodeValue+"\"";
+            str += ">";
+          }
+          node = node.nextSibling;
+          node.parentNode.removeChild(node.previousSibling);
+        }
+        str += "</m:math>";
+        newnode = document.createElement("span");
+        node.parentNode.replaceChild(newnode,node);
+        newnode.innerHTML = str;
+      }
+  }
+  
+  if (document.createElementNS==null) {
+    document.write("<object id=\"mathplayer\"\
+    classid=\"clsid:32F66A20-7614-11D4-BD11-00104BD3F987\"></object>");
+    document.write("<?import namespace=\"m\" implementation=\"#mathplayer\"?>");
+  }
+  if(typeof window.addEventListener != 'undefined'){
+    window.addEventListener('load', convert, false);
+  }
+  if(typeof window.attachEvent != 'undefined') {
+    window.attachEvent('onload', convert);
+  }
+  /*]]>*/
+  </script>
+    
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+      <section>
+        <h1>Elixir Biohackathon</h1>
+          <h3><a href="https://BH2018paris.info">BH2018paris.info</a></h3>
+        <p>
+          <h4>Victoria Dominguez Del Angel, AHM 2018</h4>
+        </p>
+      </section> 
+      
+      
+				<section id="reasons-for-organaising-a-bh" class="level2">
+<h2>Reasons for organaising a BH</h2>
+<ul>
+<li class="fragment">
+Hackathons have a good strategy to build bridges over traditional research teams
+</li>
+<li class="fragment">
+the out of the box ideas are potentially accelerated thanks to the multidisciplinary teams and stimulate the environment
+</li>
+</ul>
+</section>
+<section id="and-also" class="level2">
+<h2>..and also</h2>
+<ul>
+<li>Different levels of expertise to assess the ideas of opening up research insights</li>
+<li>Potentially a great agile extension to the more structured collaboration between multiple investigators and institutions</li>
+</ul>
+</section>
+<section id="bhs-aims" class="level2">
+<h2>BH’s aims</h2>
+<ul>
+<li>Elixir Hackathon wants to encourage developers to collaborate and develop solutions, ideas, simple and more complex codes</li>
+<li>During hacks participant should show practical implementations in Elixir communities and platforms during intensive and productive coding sessions</li>
+<li>Common challenges proposed by the sister BioHackathon organised in Japan</li>
+</ul>
+</section>
+<section id="propose-and-select-hacking-projects" class="level2">
+<h2>Propose and select hacking projects</h2>
+<ul>
+<li>Most of the topics should aligned to challenges proposed by ELIXIR platforms (data, tools, compute, interoperability and training), ELIXIR communities</li>
+<li>Advance the development of an open-source infrastructure for data integration to accelerate scientific innovation focusing on technology implementations of FAIR</li>
+<li>Strengthen the interactions between ELIXIR Platforms and Communities to establish and reinforce collaborations</li>
+</ul>
+</section>
+<section id="what-will-the-participants-gain" class="level2">
+<h2>WHAT WILL THE PARTICIPANTS GAIN ?</h2>
+<ul>
+<li class="fragment">
+Collaborative learning emerging from discussions with peers
+</li>
+<li class="fragment">
+Testing EXISTING DEVELOPMENTS AND RESOURCES
+</li>
+<li class="fragment">
+Improve Prototypes
+</li>
+<li class="fragment">
+Sharing common interests that should bring people together to organise or grow communities
+</li>
+<li class="fragment">
+Reaching new users and improving awareness
+</li>
+</ul>
+</section>
+<section id="how-to-participate" class="level2">
+<h2>How to participate ?</h2>
+<ul>
+<li>Propose a Hack Topic (deadline extended 11th June)</li>
+<li>Elixir Hackathon is free of charge and open to everyone</li>
+<li>Participants will manage their own transport and accommodation</li>
+</ul>
+</section>
+<section id="special-thanks" class="level2">
+<h2>Special Thanks</h2>
+<ul>
+<li class="fragment">
+Rafa, Dana and Sira for leading this event
+</li>
+<li class="fragment">
+Toshiaki Katayama from DBCLS
+</li>
+<li class="fragment">
+COST Action
+</li>
+<li class="fragment">
+Interoperabilite platform members
+</li>
+<li class="fragment">
+Committee members
+</li>
+<li class="fragment">
+Ricardo for the beautiful website
+</li>
+</ul>
+</section>
+<section id="section" class="level2">
+<h2></h2>
+<p>What are you waiting for?</p>
+<figure>
+<img src="fig/bh2018Paris.png" alt="come and join us!" /><figcaption>come and join us!</figcaption>
+</figure>
+</section>
+<section id="section-1" class="level2">
+<h2></h2>
+<ul>
+<li class="fragment">
+Thank you everyone for listening to me
+</li>
+<li class="fragment">
+We would love you to come to Paris… so,
+</li>
+<li class="fragment">
+what are you waiting for?
+</li>
+</ul>
+</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme || "simple" , // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || "concave", // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
