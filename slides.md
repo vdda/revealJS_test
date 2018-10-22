@@ -1,9 +1,10 @@
 % Elixir Biohackathon
-%  [BH2018paris.info](https://BH2018paris.info)
-% Victoria Dominguez Del Angel, AHM 2018
+% [BH2018paris.info](https://BH2018paris.info)
+% Victoria Dominguez Del Angel, AHM 2018!
 
 
-## Reasons for organaising a BH
+
+## Reasons for organising a BH
 
 <ul>
 <li class="fragment">Hackathons have a good strategy to build bridges over traditional
@@ -56,6 +57,10 @@ together to organise or grow communities</li>
 * Elixir Hackathon is free of charge and open to everyone
 * Participants will manage their own transport and accommodation
 
+## Overview
+
+![Topics!](fig/some_topics.png)
+
 
 ## Special Thanks
 
@@ -74,13 +79,7 @@ What are you waiting for?
 
 ![come and join us!](fig/bh2018Paris.png)
 
-## 
 
-<ul>
-<li class="fragment">Thank you everyone for listening to me</li>
-<li class="fragment">We would love you to come to Paris…  so,</li>
-<li class="fragment">what are you waiting for?</li>
-</ul>
 
 
 

@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Elixir Biohackathon</title>
+		<title>Bioschemas support to FAIR</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -117,111 +117,156 @@
 			<div class="slides">
 
       <section>
-        <h1>Elixir Biohackathon</h1>
-          <h3><a href="https://BH2018paris.info">BH2018paris.info</a></h3>
+        <h1>Bioschemas support to FAIR</h1>
+          <h3>FAIR on Training Material and Training Events <a href="http://www.igst.it/nettab/2018/">Nettab 2018</a></h3>
         <p>
-          <h4>Victoria Dominguez Del Angel, AHM 2018!</h4>
+          <h4>Victoria Dominguez Del Angel <a href="http://twitter.com/vic_bioinfo"><span class="citation" data-cites="vic_bioinfo">@vic_bioinfo</span></a></h4>
         </p>
       </section> 
       
       
-				<section id="reasons-for-organising-a-bh" class="level2">
-<h2>Reasons for organising a BH</h2>
+				<section id="why-caring-about-training-and-event-training-in-life-science-scientists" class="level2">
+<h2>Why caring about Training and event Training in life science scientists?</h2>
+<ul>
+<li>Explosion of data analyze</li>
+<li>Thousand of possible tools and pipelines for specific analyses</li>
+<li>Find accurate learning path to improve skills and curriculum</li>
+</ul>
+</section>
+<section id="find-training-through-search-engines-is-not-always-easy" class="level2">
+<h2>Find training through Search Engines is not always easy</h2>
 <ul>
 <li class="fragment">
-Hackathons have a good strategy to build bridges over traditional research teams
+Small labs, departments and organizations do not typically have as much traffic as larger institutions so are ranked lower in search results
 </li>
 <li class="fragment">
-the out of the box ideas are potentially accelerated thanks to the multidisciplinary teams and stimulate the environment
+Harder to find advanced or niche topics. Training about common topics and introductory courses are more visible as they’re more popular
+</li>
+<li class="fragment">
+Ending: Search engines are not optimal for finding training
 </li>
 </ul>
 </section>
-<section id="and-also" class="level2">
-<h2>..and also</h2>
+<section id="fair-model" class="level2">
+<h2>FAIR Model</h2>
+<p><img src="images/FAIR_model.png" alt="drawing" width="800"/></p>
+</section>
+<section id="findable" class="level2">
+<h2>Findable</h2>
+<p><img src="images/tess_trMat.png" alt="drawing" width="800"/></p>
 <ul>
-<li>Different levels of expertise to assess the ideas of opening up research insights</li>
-<li>Potentially a great agile extension to the more structured collaboration between multiple investigators and institutions</li>
+<li>TeSS Portal <a href="https://tess.elixir-europe.org">https://tess.elixir-europe.org</a></li>
+<li>Use metadata (YAML file, JSON and so on)</li>
 </ul>
 </section>
-<section id="bhs-aims" class="level2">
-<h2>BH’s aims</h2>
+<section id="accesible" class="level2">
+<h2>Accesible</h2>
 <ul>
-<li>Elixir Hackathon wants to encourage developers to collaborate and develop solutions, ideas, simple and more complex codes</li>
-<li>During hacks participant should show practical implementations in Elixir communities and platforms during intensive and productive coding sessions</li>
-<li>Common challenges proposed by the sister BioHackathon organised in Japan</li>
+<li><p>Online: HTTP, HTTPS or REST Api (ex: wget, curl)</p></li>
+<li><p><a href="http://galaxyproject.github.io/training-material/">https://galaxyproject.github.io/training-material/</a></p></li>
+<li><p><a href="https://www.france-bioinformatique.fr/sites/default/files/V08_Yvan%20Le%20Bras%20-%20Training%20RADSeq_0.pdf">V08_Yvan_Le_Bras-Training_RADSeq</a></p></li>
 </ul>
 </section>
-<section id="propose-and-select-hacking-projects" class="level2">
-<h2>Propose and select hacking projects</h2>
+<section id="interoperable" class="level2">
+<h2>Interoperable</h2>
 <ul>
-<li>Most of the topics should aligned to challenges proposed by ELIXIR platforms (data, tools, compute, interoperability and training), ELIXIR communities</li>
-<li>Advance the development of an open-source infrastructure for data integration to accelerate scientific innovation focusing on technology implementations of FAIR</li>
-<li>Strengthen the interactions between ELIXIR Platforms and Communities to establish and reinforce collaborations</li>
+<li>Metadata description (YAML file, JSON-LD)</li>
+<li>Integration with ontologies as EDAM ONTOLOGY (link with other resources) <a href="https://ifb-elixirfr.github.io/edam-browser/">DAG EDAM Browser </a></li>
+<li>Integration with FAIR resources (Dataset, tools and so on)</li>
+<li>Technical support for different platforms</li>
 </ul>
 </section>
-<section id="what-will-the-participants-gain" class="level2">
-<h2>WHAT WILL THE PARTICIPANTS GAIN ?</h2>
+<section id="reusable" class="level2">
+<h2>Reusable</h2>
 <ul>
-<li class="fragment">
-Collaborative learning emerging from discussions with peers
-</li>
-<li class="fragment">
-Testing EXISTING DEVELOPMENTS AND RESOURCES
-</li>
-<li class="fragment">
-Improve Prototypes
-</li>
-<li class="fragment">
-Sharing common interests that should bring people together to organise or grow communities
-</li>
-<li class="fragment">
-Reaching new users and improving awareness
-</li>
+<li>Have a license <a href="https://creativecommons.org/licenses/by/4.0/"> ex: CC BY 4.0 license </a></li>
+<li>Provenance</li>
+<li>Reach Metadata</li>
+<li>Following community standards</li>
 </ul>
 </section>
-<section id="how-to-participate" class="level2">
-<h2>How to participate ?</h2>
+<section id="beyond-fair" class="level2">
+<h2>Beyond FAIR</h2>
 <ul>
-<li>Propose a Hack Topic (deadline extended 11th June)</li>
-<li>Elixir Hackathon is free of charge and open to everyone</li>
-<li>Participants will manage their own transport and accommodation</li>
+<li>Open development process on GitHub, GITLab &amp; via Gitter</li>
+<li>Open education movement</li>
+<li>Open Data</li>
 </ul>
 </section>
-<section id="overview" class="level2">
-<h2>Overview</h2>
-<figure>
-<img src="fig/some_topics.png" alt="Topics!" /><figcaption>Topics!</figcaption>
-</figure>
+<section id="tess-critical-ressource-for-training-in-bioinformatics" class="level2">
+<h2>TeSS Critical ressource for training in Bioinformatics</h2>
+<p><img src="images/tessito_provide.png" alt="drawing" width="600"/> * TeSS Portal <a href="https://tess.elixir-europe.org">https://tess.elixir-europe.org</a></p>
+</section>
+<section id="tess-in-numbers" class="level2">
+<h2>TeSS in numbers</h2>
+<p><img src="images/tessInNumbers.png" /></p>
+</section>
+<section id="bioschemas-on-goblet-agm-2017" class="level2">
+<h2>Bioschemas on Goblet AGM 2017</h2>
+<ul>
+<li><a href="https://www.mygoblet.org/">Goblet </a></li>
+<li>Having schema.org markup in training materials allows training registries to find your materials</li>
+<li>Event vocabulary: schema.org/Event; Event schema has many attributes, which not be important for training materials or courses</li>
+<li>Need to decide if event or course is better, as above groups use Event schema</li>
+<li>Bioschemas.org/TrainingEvent based on schema.org/Event (Topic: EDAM ontology)</li>
+<li>Bioschemas.org/TrainingMaterial based on schema.org/CreativeWork</li>
+</ul>
+</section>
+<section id="methodology-for-adopting-a-new-profile" class="level2">
+<h2>Methodology for adopting a new profile</h2>
+<ul>
+<li>Find and characterize Use cases
+<ul>
+<li>TeSS and other training websites</li>
+</ul></li>
+<li>Perform a Cross Walk
+<ul>
+<li>Compared the metadata presented by 15 training providers</li>
+<li>Discussed and determined cardinality, minimum, controlled vocabs</li>
+</ul></li>
+<li>Keep discussion alive with Tasks and issues</li>
+<li>Forum for ongoing discussion via Github Issues</li>
+<li>Make Examples</li>
+<li>Show code examples to give adopters a sense of how to join</li>
+</ul>
+</section>
+<section id="bioschemas-cross-walk-training-materials" class="level2">
+<h2>Bioschemas Cross Walk (Training Materials)</h2>
+<p><img src="images/cross_TrMaterial.png" /></p>
+</section>
+<section id="adding-bioschemas-to-a-website" class="level2">
+<h2>Adding Bioschemas to a website</h2>
+<ul>
+<li>Map existing metadata to fields described by Bioschemas vocabulary</li>
+<li>Create a schema.org Expose those variables <img src="images/add_bioschem2Website.png" /></li>
+</ul>
+</section>
+<section id="mapping" class="level2">
+<h2>Mapping</h2>
+<p><img src="images/make_example.png" /></p>
+</section>
+<section id="ongoing-work-tess-and-goblet" class="level2">
+<h2>Ongoing Work (TeSS and Goblet)</h2>
+<ul>
+<li>We are currently working on an enhancement to schema.org/Event. Making Bioschemas for
+<ul>
+<li>schema.org/Course</li>
+<li>schema.org/CourseInstance</li>
+<li>schema.org/Person</li>
+</ul></li>
+</ul>
 </section>
 <section id="special-thanks" class="level2">
 <h2>Special Thanks</h2>
 <ul>
-<li class="fragment">
-Rafa, Dana and Sira for leading this event
-</li>
-<li class="fragment">
-Toshiaki Katayama from DBCLS
-</li>
-<li class="fragment">
-CHARME/ COST Action
-</li>
-<li class="fragment">
-Interoperabilite platform members
-</li>
-<li class="fragment">
-Committee members
-</li>
-<li class="fragment">
-Ricardo for the beautiful website
-</li>
+<li><a href="https://www.mygoblet.org/about-us/goblet-events/goblet-agm-2017-oeiras">Goblet AGM 2017 </a></li>
+<li>Niall Bernard</li>
+<li>Prof Terry Attwood</li>
 </ul>
 </section>
-<section id="section" class="level2">
-<h2></h2>
-<p>What are you waiting for?</p>
-<figure>
-<img src="fig/bh2018Paris.png" alt="come and join us!" /><figcaption>come and join us!</figcaption>
-</figure>
+<section id="hands-on" class="level2">
+<h2>Hands-on</h2>
+<p><img src="images/hands_on.png" alt="drawing" width="600"/></p>
 </section>
 
 			</div>
