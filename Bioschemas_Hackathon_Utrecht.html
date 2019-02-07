@@ -118,7 +118,7 @@
 
       <section>
         <h1>FAIR-Bioschemas Training at <a href="https://www.dtls.nl/">DTL</a></h1>
-          <h3>The Outcomes on Bioschemas SE and improvements on French Resources</h3>
+          <h3>The Outcome on Bioschemas SE and improvements on French Resources</h3>
         <p>
           <h4>Victoria Dominguez Del Angel <a href="http://www.france-bioinformatique.fr/">ELIXIR-FR</a> , Utrecht (7-8 Feb, 2019)</h4>
         </p>
@@ -135,16 +135,16 @@
 <h3>ABOUT Elixir-FR</h3>
 <ul>
 <li class="fragment">
-Missions : Performance world-class research in Life-sciences and medecine thanks to innovante Bioinformatic Services (High impact services)
+Missions : Performance world-class research in Life-sciences and medecines, thanks to innovative Bioinformatic Services (High Impact Services)
 </li>
 <li class="fragment">
-IFB is to coordinates and leads the field of bioinformatics in France from 32 platforms belonging to the main French research organisations: CNRS, INSERM,CEA,INRA, INRIA
+IFB coordinates and leads the field of bioinformatics in France from 32 platforms which belong to the main French research organisations: CNRS, INSERM, CEA, INRA, INRIA
 </li>
 <li class="fragment">
 To empower the French Bioinformatic community
 </li>
 <li class="fragment">
-Elixir-FR coordinates Elixir Activities to maintened and push the frontieres of knowledges from French bioinformatic communities
+Elixir-FR coordinates Elixir Activities to maintain and push the frontieres of knowledge from French bioinformatic communities
 </li>
 </ul>
 </section>
@@ -173,7 +173,7 @@ Elixir-FR coordinates Elixir Activities to maintened and push the frontieres of 
 </ul></li>
 <li>Software and Data Environment: middleware, tools and workflows</li>
 <li>Databases (Data collections)</li>
-<li>DMP</li>
+<li>DMP (new)</li>
 <li>Traning : TrR, TrD and TrT (via Elixir)
 <li class="fragment">
 Catalogue of French resources in bioinformatics
@@ -183,9 +183,9 @@ Catalogue of French resources in bioinformatics
 <section id="bioschemas-on-catalogue-of-french-resources" class="level3">
 <h3>Bioschemas on catalogue of French Resources</h3>
 <ul>
-<li>To Improve interoperability in our Services</li>
+<li>To Improve interoperability in our services</li>
 <li>To structure information then makes it easier to discover, collate and analyse the distributed information</li>
-<li>Tools, Data, Persons, Organistion (platforms, labs, companies) and Training (Event and Material)</li>
+<li>Tools, Data, Person, Organistions (platforms, labs, companies) and Training (Event and Material)</li>
 </ul>
 </section>
 <section id="bioschemas-tools---editor" class="level3">
@@ -196,12 +196,22 @@ Catalogue of French resources in bioinformatics
 <li>Display and export the markup code in JSON-LD (linked data) <img src="images/Bschm_event_metadata.png" /></li>
 </ul>
 </section>
+<section id="tess-advanteges" class="level3">
+<h3>TeSS advanteges</h3>
+<ul>
+<li>The schema.org and bioschemas markup</li>
+<li>Search Engine optimized</li>
+<li>Training material can be easily parsed with JQuery</li>
+<li>The TeSS portal fully supports the FAIR principles for scientific data</li>
+<li><a href="https://ifb-elixirfr.github.io/edam-browser/">EDAM Browser</a></li>
+</ul>
+</section>
 <section id="ifb-challenges-in-the-ids-and-urls-landscape" class="level3">
 <h3>IFB Challenges in the ID’s and URL’s landscape</h3>
 <ul>
-<li>Typical properties of systems of identifiers:
+<li>Typical properties of systems for identifiers:
 <ul>
-<li>Uniqueness, non ambiguity, persistence, abstraction (opacity</li>
+<li>Uniqueness, non ambiguity, persistence, abstraction (opacity)</li>
 <li>Gratis: identifiers (millions of objects)</li>
 <li>Integrity: the associated object cannot be changed</li>
 </ul></li>
@@ -237,43 +247,78 @@ Catalogue of French resources in bioinformatics
 <table>
 <tbody>
 <tr class="odd">
-<td>| Mech. / System | Handle | DOI | Ark | PURL |</td>
+<td style="text-align: left;">Mech. / System | Handle | DOI | Ark | PURL</td>
 </tr>
 <tr class="even">
-<td>| Generation | Yes | Yes | Yes | Yes |</td>
+<td style="text-align: left;">Generation | Yes | Yes | Yes | Yes</td>
 </tr>
 <tr class="odd">
-<td>| Assignment | Yes | Yes | Yes | Yes |</td>
+<td style="text-align: left;">Assignment | Yes | Yes | Yes | Yes</td>
 </tr>
 <tr class="even">
-<td>| Retrieval | Yes | Yes | Yes | Yes |</td>
+<td style="text-align: left;">Retrieval | Yes | Yes | Yes | Yes</td>
 </tr>
 <tr class="odd">
-<td>| Verification | N.A. | N.A. | N.A. | N.A. |</td>
+<td style="text-align: left;">Verification | N.A. | N.A. | N.A. | N.A.</td>
 </tr>
 <tr class="even">
-<td>| Reverse Lookup | N.A. | N.A. | N.A. | N.A. |</td>
+<td style="text-align: left;">Reverse Lookup | N.A. | N.A. | N.A. | N.A.</td>
 </tr>
 <tr class="odd">
-<td>| Description Yes Yes Yes N.A</td>
+<td style="text-align: left;">Description | Yes | Yes | Yes | <em>N.A</em></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="on-going-discussion" class="level3">
+<h3>“On-going” Discussion</h3>
+<ul>
+<li>DOI vs IDO
+<ul>
+<li>The term “Digital Object Identifier” is construed as “digital identifier of an object,” rather than “identifier of a digital object”</li>
+</ul></li>
+<li>DIO (Digital Identifier of an Object)
+<ul>
+<li>digital identifiers for (potentially) non digital objects</li>
+<li>epistemic complexity (manifestations, versions, locations, etc.) need an authority to ensure persistence and uniqueness</li>
+</ul></li>
+<li>IDO (Identifier of a Digital Object)
+<ul>
+<li>digital identifiers (only) for digital objects</li>
+<li>can provide both integrity and no middle man</li>
+<li>broadly used in modern software development (git, etc.)</li>
+</ul></li>
+</ul>
+</section>
+<section id="future-catalogue" class="level3">
+<h3>Future Catalogue</h3>
+<p><img src="images/Photo_catalog.png" /></p>
 </section>
 <section id="elixir-node-capacity-building-and-communities-and-staff-exchanges" class="level3">
 <h3>ELIXIR Node Capacity Building and Communities and Staff exchanges</h3>
 <ul>
 <li>Construct and coordinate ELIXIR-wide ‘communities of practice’ that support and develop the professionals who deliver advanced data and bioinformatics services in ELIXIR Nodes</li>
+<li>Bioschema Staff-exchanges “how to do guidelines” (covering creation and use of profiles)</li>
 </ul>
 </section>
-<section id="then-lets-start" class="level3">
-<h3>Then, Let’s Start</h3>
+<section id="gitbook-bioschemas.gitbook.iotraining-portal" class="level3">
+<h3>GITBOOK (bioschemas.gitbook.io/training-portal/)</h3>
+<p><img src="images/gitbook.png" /></p>
+</section>
+<section id="improvements-on-distributed-information-system-with-bioschemas" class="level3">
+<h3>Improvements on distributed information system with BioSchemas</h3>
 <ul>
-<li>Round Table</li>
-<li>What is Bioschemas?</li>
-<li>How to use a profile: datacatalog, dataset and so on.</li>
-<li>Hands-on session</li>
+<li>F-A of the Breeding API initiative (brapi.org)</li>
+<li>Genetic Material, phenotyping experiments, genotyping experiments ..</li>
+<li>Aligned on implementation of data satandards: MCPD, MIAPPE (Minimal Information About Plant Phenotyping Experiments)</li>
 </ul>
+</section>
+<section id="elixir-plant-breeding-api-json-etl" class="level3">
+<h3>Elixir plant Breeding API JSON ETL</h3>
+<p><img src="images/Brapi_API.png" /></p>
+</section>
+<section id="thank-you-for-your-attention" class="level3">
+<h3>Thank you for your attention</h3>
 </section>
 
 			</div>
