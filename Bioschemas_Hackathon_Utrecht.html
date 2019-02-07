@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>FAIR-Bioschemas Training at <a href="https://www.dtls.nl/">DTL</a></title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">   
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		
+          <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+        
+    <!-- For syntax highlighting -->
+          <link rel="stylesheet" href="lib/css/zenburn.css">
+    
+    <!-- For Customized Design-->
+    <link rel="stylesheet" href="css/custom.css">
+    
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+    
+    <script type="text/javascript">/*<![CDATA[*/
+  /* 
+  March 19, 2004 MathHTML (c) Peter Jipsen http://www.chapman.edu/~jipsen
+  Released under the GNU General Public License version 2 or later.
+  See the GNU General Public License (at http://www.gnu.org/copyleft/gpl.html)
+  for more details.
+  */
+  
+  function convertMath(node) {// for Gecko
+    if (node.nodeType==1) {
+      var newnode = 
+        document.createElementNS("http://www.w3.org/1998/Math/MathML",
+          node.nodeName.toLowerCase());
+      for(var i=0; i < node.attributes.length; i++)
+        newnode.setAttribute(node.attributes[i].nodeName,
+          node.attributes[i].nodeValue);
+      for (var i=0; i<node.childNodes.length; i++) {
+        var st = node.childNodes[i].nodeValue;
+        if (st==null || st.slice(0,1)!=" " && st.slice(0,1)!="\n") 
+          newnode.appendChild(convertMath(node.childNodes[i]));
+      }
+      return newnode;
+    }
+    else return node;
+  }
+  
+  function convert() {
+    var mmlnode = document.getElementsByTagName("math");
+    var st,str,node,newnode;
+    for (var i=0; i<mmlnode.length; i++)
+      if (document.createElementNS!=null)
+        mmlnode[i].parentNode.replaceChild(convertMath(mmlnode[i]),mmlnode[i]);
+      else { // convert for IE
+        str = "";
+        node = mmlnode[i];
+        while (node.nodeName!="/MATH") {
+          st = node.nodeName.toLowerCase();
+          if (st=="#text") str += node.nodeValue;
+          else {
+            str += (st.slice(0,1)=="/" ? "</m:"+st.slice(1) : "<m:"+st);
+            if (st.slice(0,1)!="/") 
+               for(var j=0; j < node.attributes.length; j++)
+                 if (node.attributes[j].nodeValue!="italic" &&
+                   node.attributes[j].nodeValue!="" &&
+                   node.attributes[j].nodeValue!="inherit" &&
+                   node.attributes[j].nodeValue!=undefined)
+                   str += " "+node.attributes[j].nodeName+"="+
+                       "\""+node.attributes[j].nodeValue+"\"";
+            str += ">";
+          }
+          node = node.nextSibling;
+          node.parentNode.removeChild(node.previousSibling);
+        }
+        str += "</m:math>";
+        newnode = document.createElement("span");
+        node.parentNode.replaceChild(newnode,node);
+        newnode.innerHTML = str;
+      }
+  }
+  
+  if (document.createElementNS==null) {
+    document.write("<object id=\"mathplayer\"\
+    classid=\"clsid:32F66A20-7614-11D4-BD11-00104BD3F987\"></object>");
+    document.write("<?import namespace=\"m\" implementation=\"#mathplayer\"?>");
+  }
+  if(typeof window.addEventListener != 'undefined'){
+    window.addEventListener('load', convert, false);
+  }
+  if(typeof window.attachEvent != 'undefined') {
+    window.attachEvent('onload', convert);
+  }
+  /*]]>*/
+  </script>
+    
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+      <section>
+        <h1>FAIR-Bioschemas Training at <a href="https://www.dtls.nl/">DTL</a></h1>
+          <h3>The Outcomes on Bioschemas SE and improvements on French Resources</h3>
+        <p>
+          <h4>Victoria Dominguez Del Angel <a href="http://www.france-bioinformatique.fr/">ELIXIR-FR</a> , Utrecht (7-8 Feb, 2019)</h4>
+        </p>
+      </section> 
+      
+      
+				<section id="ifb" class="level3">
+<h3>IFB</h3>
+<ul>
+<li>French National Bioinformatic Infrastructure <img src="images/IFB_elixir.png" /></li>
+</ul>
+</section>
+<section id="about-elixir-fr" class="level3">
+<h3>ABOUT Elixir-FR</h3>
+<ul>
+<li class="fragment">
+Missions : Performance world-class research in Life-sciences and medecine thanks to innovante Bioinformatic Services (High impact services)
+</li>
+<li class="fragment">
+IFB is to coordinates and leads the field of bioinformatics in France from 32 platforms belonging to the main French research organisations: CNRS, INSERM,CEA,INRA, INRIA
+</li>
+<li class="fragment">
+To empower the French Bioinformatic community
+</li>
+<li class="fragment">
+Elixir-FR coordinates Elixir Activities to maintened and push the frontieres of knowledges from French bioinformatic communities
+</li>
+</ul>
+</section>
+<section id="european-open-science-cloud" class="level3">
+<h3>European Open Science Cloud</h3>
+<ul>
+<li>A virtual environment for Europe’s 1.7 million researchers <img src="images/eosc2.png" /></li>
+</ul>
+</section>
+<section id="european-open-science-cloud-fair" class="level3">
+<h3>European Open Science Cloud : FAIR</h3>
+<p><img src="images/Fair.png" /></p>
+</section>
+<section id="european-open-science-cloud-dmp" class="level3">
+<h3>European Open Science Cloud : DMP</h3>
+<ul>
+<li>Security and sustainability of data <img src="images/DMP.png" /></li>
+</ul>
+</section>
+<section id="services" class="level3">
+<h3>Services</h3>
+<ul>
+<li>National Network of Computational Resources (NNCR)
+<ul>
+<li>Compute 21 k vCPU, Storage 9,5 K (TB) and RAM 173 k (Gb)</li>
+</ul></li>
+<li>Software and Data Environment: middleware, tools and workflows</li>
+<li>Databases (Data collections)</li>
+<li>DMP</li>
+<li>Traning : TrR, TrD and TrT (via Elixir)
+<li class="fragment">
+Catalogue of French resources in bioinformatics
+</li></li>
+</ul>
+</section>
+<section id="bioschemas-on-catalogue-of-french-resources" class="level3">
+<h3>Bioschemas on catalogue of French Resources</h3>
+<ul>
+<li>To Improve interoperability in our Services</li>
+<li>To structure information then makes it easier to discover, collate and analyse the distributed information</li>
+<li>Tools, Data, Persons, Organistion (platforms, labs, companies) and Training (Event and Material)</li>
+</ul>
+</section>
+<section id="bioschemas-tools---editor" class="level3">
+<h3>Bioschemas Tools - Editor</h3>
+<ul>
+<li>Generate dynamic forms from Bioschemas specifications (adaptive)</li>
+<li>User-friendly edition of resource metadata</li>
+<li>Display and export the markup code in JSON-LD (linked data) <img src="images/Bschm_event_metadata.png" /></li>
+</ul>
+</section>
+<section id="ifb-challenges-in-the-ids-and-urls-landscape" class="level3">
+<h3>IFB Challenges in the ID’s and URL’s landscape</h3>
+<ul>
+<li>Typical properties of systems of identifiers:
+<ul>
+<li>Uniqueness, non ambiguity, persistence, abstraction (opacity</li>
+<li>Gratis: identifiers (millions of objects)</li>
+<li>Integrity: the associated object cannot be changed</li>
+</ul></li>
+</ul>
+</section>
+<section id="systems-of-identifiers" class="level3">
+<h3>Systems of identifiers</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Generation =&gt; <strong>Create a new label </strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Assignment =&gt; <strong>Associate label to object</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Retrieval =&gt; <strong>Get object from a label</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Verification (opt) =&gt; <em>check label and object</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Reverse Lookup (opt) =&gt; <em>get label from an object</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Description (opt) =&gt; <em>get metadata of an object</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mechanismes-offered-in-some-identifiers" class="level3">
+<h3>Mechanismes offered in some identifiers</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>| Mech. / System | Handle | DOI | Ark | PURL |</td>
+</tr>
+<tr class="even">
+<td>| Generation | Yes | Yes | Yes | Yes |</td>
+</tr>
+<tr class="odd">
+<td>| Assignment | Yes | Yes | Yes | Yes |</td>
+</tr>
+<tr class="even">
+<td>| Retrieval | Yes | Yes | Yes | Yes |</td>
+</tr>
+<tr class="odd">
+<td>| Verification | N.A. | N.A. | N.A. | N.A. |</td>
+</tr>
+<tr class="even">
+<td>| Reverse Lookup | N.A. | N.A. | N.A. | N.A. |</td>
+</tr>
+<tr class="odd">
+<td>| Description Yes Yes Yes N.A</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="elixir-node-capacity-building-and-communities-and-staff-exchanges" class="level3">
+<h3>ELIXIR Node Capacity Building and Communities and Staff exchanges</h3>
+<ul>
+<li>Construct and coordinate ELIXIR-wide ‘communities of practice’ that support and develop the professionals who deliver advanced data and bioinformatics services in ELIXIR Nodes</li>
+</ul>
+</section>
+<section id="then-lets-start" class="level3">
+<h3>Then, Let’s Start</h3>
+<ul>
+<li>Round Table</li>
+<li>What is Bioschemas?</li>
+<li>How to use a profile: datacatalog, dataset and so on.</li>
+<li>Hands-on session</li>
+</ul>
+</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme || "simple" , // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || "concave", // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
