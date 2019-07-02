@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>EMBRC-France</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">   
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		
+          <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+        
+    <!-- For syntax highlighting -->
+          <link rel="stylesheet" href="lib/css/zenburn.css">
+    
+    <!-- For Customized Design-->
+    <link rel="stylesheet" href="css/custom.css">
+    
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+    
+    <script type="text/javascript">/*<![CDATA[*/
+  /* 
+  March 19, 2004 MathHTML (c) Peter Jipsen http://www.chapman.edu/~jipsen
+  Released under the GNU General Public License version 2 or later.
+  See the GNU General Public License (at http://www.gnu.org/copyleft/gpl.html)
+  for more details.
+  */
+  
+  function convertMath(node) {// for Gecko
+    if (node.nodeType==1) {
+      var newnode = 
+        document.createElementNS("http://www.w3.org/1998/Math/MathML",
+          node.nodeName.toLowerCase());
+      for(var i=0; i < node.attributes.length; i++)
+        newnode.setAttribute(node.attributes[i].nodeName,
+          node.attributes[i].nodeValue);
+      for (var i=0; i<node.childNodes.length; i++) {
+        var st = node.childNodes[i].nodeValue;
+        if (st==null || st.slice(0,1)!=" " && st.slice(0,1)!="\n") 
+          newnode.appendChild(convertMath(node.childNodes[i]));
+      }
+      return newnode;
+    }
+    else return node;
+  }
+  
+  function convert() {
+    var mmlnode = document.getElementsByTagName("math");
+    var st,str,node,newnode;
+    for (var i=0; i<mmlnode.length; i++)
+      if (document.createElementNS!=null)
+        mmlnode[i].parentNode.replaceChild(convertMath(mmlnode[i]),mmlnode[i]);
+      else { // convert for IE
+        str = "";
+        node = mmlnode[i];
+        while (node.nodeName!="/MATH") {
+          st = node.nodeName.toLowerCase();
+          if (st=="#text") str += node.nodeValue;
+          else {
+            str += (st.slice(0,1)=="/" ? "</m:"+st.slice(1) : "<m:"+st);
+            if (st.slice(0,1)!="/") 
+               for(var j=0; j < node.attributes.length; j++)
+                 if (node.attributes[j].nodeValue!="italic" &&
+                   node.attributes[j].nodeValue!="" &&
+                   node.attributes[j].nodeValue!="inherit" &&
+                   node.attributes[j].nodeValue!=undefined)
+                   str += " "+node.attributes[j].nodeName+"="+
+                       "\""+node.attributes[j].nodeValue+"\"";
+            str += ">";
+          }
+          node = node.nextSibling;
+          node.parentNode.removeChild(node.previousSibling);
+        }
+        str += "</m:math>";
+        newnode = document.createElement("span");
+        node.parentNode.replaceChild(newnode,node);
+        newnode.innerHTML = str;
+      }
+  }
+  
+  if (document.createElementNS==null) {
+    document.write("<object id=\"mathplayer\"\
+    classid=\"clsid:32F66A20-7614-11D4-BD11-00104BD3F987\"></object>");
+    document.write("<?import namespace=\"m\" implementation=\"#mathplayer\"?>");
+  }
+  if(typeof window.addEventListener != 'undefined'){
+    window.addEventListener('load', convert, false);
+  }
+  if(typeof window.attachEvent != 'undefined') {
+    window.attachEvent('onload', convert);
+  }
+  /*]]>*/
+  </script>
+    
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+      <section>
+        <h1>EMBRC-France</h1>
+          <h3>Executive Director</h3>
+        <p>
+          <h4>Victoria Dominguez Del Angel <a href="https://www.linkedin.com/in/vdangel">Linkedin Profile</a></h4>
+        </p>
+      </section> 
+      
+      
+				<section id="overview" class="level2">
+<h2>Overview</h2>
+<ul>
+<li class="fragment">
+Education and Professional background
+</li>
+<li class="fragment">
+Institut Français de Bioinformatique-IFB, Elixir experience
+</li>
+<li class="fragment">
+Motivations to candidate for this position
+</li>
+<li class="fragment">
+Relevant qualifications and knowledge to this job
+</li>
+</ul>
+</section>
+<section id="education" class="level2">
+<h2>Education</h2>
+<ul>
+<li>1996 - Bachelor of Science (B.Sc.), Natural Sciences (UNAM, Mexico)</li>
+<li>1998 - M.Sc. in Biomedical Sciences, Centro de Ciencias Genomicas (UNAM)</li>
+<li>2003 - PhD AGM2, University of Paris VII, Institut Pasteur - Institut de minéralogie, de physique des matériaux et de cosmochimie collaboration between two institutions (Cassian Bon and Jean-Paul Mornon)</li>
+</ul>
+<ul>
+<li class="fragment">
+2019 E-MBA in Research Infrastructure Management, University of Milano-Bicocca, <a href="http://ritrain.eu/">RITRAIN.EU</a>
+</li>
+</ul>
+</section>
+<section id="professional-background" class="level2">
+<h2>Professional background</h2>
+<ul>
+<li>04 2003 - 10 2006 Pasteur Institut, Paris, France</li>
+<li>02 2007 - 08 2009 INRA, Versailles, France — Post-doctorant</li>
+<li>10 2009 - 10 2010 Porteur de projet Incuballiance</li>
+<li>06 2010 Award Concours de ministère de l’Enseignement supérieur et de la Recherche &amp; OSEO</li>
+</ul>
+</section>
+<section id="professional-background-2" class="level2">
+<h2>Professional background (2)</h2>
+<ul>
+<li>01 2010 - 08 2015 CEO ABgenomica</li>
+<li>French SME mission : Developer and designer of IT computing techniques for biomedical research and medical diagnosis. We adapted NGS-Omic solution based on cloud computing and container technologies.</li>
+<li>5 highly specialized engineers and 2 patents</li>
+</ul>
+<ul>
+<li class="fragment">
+07 2015 - 01 2016 Assistant Professor in Bioinformatics, Conacyt/Colegio de Postgraduados, Campeche Mexico
+</li>
+</ul>
+</section>
+<section id="professional-background-3" class="level2">
+<h2>Professional background (3)</h2>
+<ul>
+<li>02 2016 - CVF -cell at the Institut Français de Bioinformatique</li>
+</ul>
+<ul>
+<li class="fragment">
+ELIXIR - Training Coordinator
+</li>
+<li class="fragment">
+Development of communication strategy, valorisation and Industrial Relations
+</li>
+<li class="fragment">
+Represent the IFB to agencies, organisations, congress and the general public.
+</li>
+</ul>
+</section>
+<section id="training-coordinator-achievements" class="level2">
+<h2>Training Coordinator Achievements</h2>
+<ul>
+<li>Around 20 Training events: Organisation and co-organisation
+<ul>
+<li>Software Carpentry (unix, git and python)=&gt; April 2019</li>
+<li>Single Cell (Finland May 27 2019)</li>
+<li>Capacity Building: Genome assembly &amp; annotation (Five countries)</li>
+</ul></li>
+<li>Key Performance Indicators (KPI’s) and Identifying strategic Training needs</li>
+<li>Building International reach (Elixir Training, Carpentries, CODATA, ..)</li>
+<li>Accessibility for Training Material (Elixir TeSS)</li>
+</ul>
+</section>
+<section id="industry-and-valorisation-achievements" class="level2">
+<h2>Industry and Valorisation Achievements</h2>
+<ul>
+<li>Organisation of Elixir-SME meeting: Forum titled Data-Driven Innovation in Rare Diseases and Personalised Medicine (110 participants and more than 30 start-ups)</li>
+<li>Constitution of IAC (Industry Advisory Committee)</li>
+<li>Representing the IFB at MESRI meeting and activities</li>
+<li>Others: GCC 2018, Elixir meetings</li>
+</ul>
+</section>
+<section id="organisation-of-elixir-biohackathon" class="level2">
+<h2>Organisation of Elixir Biohackathon</h2>
+<figure>
+<img src="fig/bh2018Paris.png" alt="150 developers" /><figcaption>150 developers</figcaption>
+</figure>
+</section>
+<section id="motivations-to-candidate-for-this-position" class="level2">
+<h2>Motivations to candidate for this position</h2>
+<ul>
+<li>Topic: Marine Biological ressources are key for the society</li>
+</ul>
+<ul>
+<li class="fragment">
+Great diversity : roughly 250 000 species has been identify
+</li>
+<li class="fragment">
+Half of the population live near to coasts
+</li>
+<li class="fragment">
+Marine microbiome produces most of the O2 and plays a key role in removal of CO2
+</li>
+<li class="fragment">
+70 % of oxygen comes from the oceans
+</li>
+</ul>
+</section>
+<section id="relevant-qualifications-and-knowledge-to-this-job" class="level2">
+<h2>Relevant qualifications and knowledge to this job</h2>
+<ul>
+<li class="fragment">
+Practices in fundraising, marketing, public relations, information systems and human resources.
+</li>
+<li class="fragment">
+Experiences working on virtual teams
+</li>
+<li class="fragment">
+As Communication Officer to promote the activities of IR’s. Represent the organization to agencies, stakeholders and the general public.
+</li>
+<li class="fragment">
+Sharing common interests that should bring people together to organise and grow communities
+</li>
+</ul>
+</section>
+<section id="embrc-eric-mission" class="level2">
+<h2>EMBRC-ERIC Mission :</h2>
+<ul>
+<li>Support and deliver on new scientific discoveries and knowledge of marine organisms and ecosystems;</li>
+<li>Promote the use of marine experimental models in mainstream science and raise the profile of marine biological sciences;</li>
+<li>Improve the sustainable utilization of marine biological resources;</li>
+<li>Promote the European blue bio-economy.</li>
+</ul>
+</section>
+<section id="the-services-offered" class="level2">
+<h2>The services offered :</h2>
+<ul>
+<li>Access to a portfolio of research platforms, biological resources, analytical services and data;</li>
+<li>Support of access to marine biological material, including genetic material, and advice and guidance on the use of marine bioresources;</li>
+<li>Integrated workflows of high quality services for access to biological, analytical and data resources by deploying standards</li>
+<li>Strengthening of the connection of science with industry</li>
+<li>Training facilities and courses for researchers and technical personnel;</li>
+<li>Collaboration with research infrastructures</li>
+<li>Support their environmental policies and blue bioeconomy.</li>
+</ul>
+</section>
+<section id="recently-emba" class="level2">
+<h2>Recently EMBA</h2>
+<ul>
+<li>Improve strategic plan, lead and coordinate the development of the annual budget, operating plan and performance goals.</li>
+<li>Reinforces gouvernance bodies and reinforce collaboration with territorial entities.</li>
+<li>Work with the account manager to maintain and refine accounting procedures for managing and tracking EMBRC-FR finances and funds</li>
+<li>Lead development of human resource programs and policies</li>
+<li>Maintain a climate in EMBRC-FR, which attracts, retains, and motivates top quality people by providing direction and support.</li>
+</ul>
+</section>
+<section id="thank-you-for-your-attention" class="level2">
+<h2>Thank you for your attention</h2>
+<p>[Questions?]</p>
+</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme || "beige" , // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || "linear", // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
